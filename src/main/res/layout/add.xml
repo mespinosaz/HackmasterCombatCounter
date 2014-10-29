@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Add new combatant"
+            android:id="@+id/textView2"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+        <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:id="@+id/textView"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/inputName"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical|left"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+        <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Count"
+                android:id="@+id/textView"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"/>
+
+        <EditText
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:ems="10"
+                android:id="@+id/inputCount"
+                android:layout_marginLeft="7dp"
+                android:layout_gravity="center_vertical"/>
+
+        <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Speed"
+                android:id="@+id/textView"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"/>
+
+        <EditText
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:ems="10"
+                android:id="@+id/inputSpeed"
+                android:layout_marginLeft="7dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:id="@+id/add_button"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginLeft="20dp"/>
+
+      <!--  <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Add from library"
+                android:id="@+id/add_library"
+                android:layout_marginLeft="10dp"/>-->
+    </LinearLayout>
+
+
+</LinearLayout>

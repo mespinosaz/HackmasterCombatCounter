@@ -1,0 +1,6 @@
+/build
+.gitignore
+app.iml
+build.gradle
+proguard-rules.pro
+touch
