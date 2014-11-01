@@ -1,8 +1,5 @@
-package com.whs.hmcc;
+package com.whs.hmcc.Model;
 
-/**
- * Created by root on 30/06/13.
- */
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -10,6 +7,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.whs.hmcc.Board.Combatant.Combatant;
 
 public class DbAdapter {
 
@@ -60,12 +59,7 @@ public class DbAdapter {
         }
 
         @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        /*    Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
-                    + newVersion + ", which will destroy all old data");
-            db.execSQL("DROP TABLE IF EXISTS " + SQLITE_TABLE);
-            onCreate(db);*/
-        }
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
     }
 
     public DbAdapter(Context ctx) {
@@ -184,17 +178,4 @@ public class DbAdapter {
         return mCursor;
 
     }
-
-    public void insertExampleData() {
-        long c1 = createCombat("Test");
-        Log.w(TAG, "test" + String.valueOf(c1));
-        createCombatant("test",1,5,c1);
-        createCombatant("test 2",4,8,c1);
-        createCombat("234");
-        createCombat("Tasddad");
-        createCombat("hdsfsa");
-        createCombat("111esdsd");
-
-    }
-
 }

@@ -1,18 +1,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/action_addcombat"
-        android:title="Add"
+        android:title="Add Combatant"
         android:orderInCategory="100"
         android:showAsAction="never" />
     <item android:id="@+id/action_clearcombat"
-          android:title="Clear"
+          android:title="Clear combat"
           android:orderInCategory="100"
           android:showAsAction="never" />
     <item android:id="@+id/action_loadcombat"
-          android:title="Load"
+          android:title="Load combat"
           android:orderInCategory="100"
           android:showAsAction="never" />
     <item android:id="@+id/action_savecombat"
-          android:title="Save"
+          android:title="Save combat"
           android:orderInCategory="100"
           android:showAsAction="never" />
 </menu>

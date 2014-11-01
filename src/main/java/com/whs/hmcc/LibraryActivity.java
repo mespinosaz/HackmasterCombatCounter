@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.whs.hmcc.Board.Combatant.Combatant;
+import com.whs.hmcc.Board.Combatant.CombatantComparator;
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
@@ -25,7 +28,7 @@ public class LibraryActivity extends Activity {
         setContentView(R.layout.library);
         load();
       //  for(int i=0;i<mCombatantArrayList.size();i++)
-        //    System.out.println(mCombatantArrayList.get(i).getName() + " " + mCombatantArrayList.get(i).getSpeed() + " " + mCombatantArrayList.get(i).getCount() + "\n");
+        //    System.out.println(mCombatantArrayList.get(i).getName() + " " + mCombatantArrayList.get(i).getSpeed() + " " + mCombatantArrayList.get(i).currentCount() + "\n");
 
 
     }
@@ -100,7 +103,7 @@ public class LibraryActivity extends Activity {
 //
 //                @Override
 //                public void onClick(View vw) {
-//                    substractCombatantCount(finalI);
+//                    decreaseCombatantCount(finalI);
 //                }
 //            });
 //
@@ -123,7 +126,7 @@ public class LibraryActivity extends Activity {
 //            ll.addView(b3);
 //
 //            int color;
-//            if (mCombatantList.get(i).getCount() == mCount) {
+//            if (combatantList.get(i).currentCount() == mCount) {
 //                color = Color.RED;
 //            } else {
 //                color = Color.BLACK;
@@ -137,7 +140,7 @@ public class LibraryActivity extends Activity {
 //
 //
 //            TextView t2 = new TextView(getApplicationContext());
-//            t2.setText(String.valueOf(mCombatantList.get(i).getSpeed()));
+//            t2.setText(String.valueOf(combatantList.get(i).getSpeed()));
 //            t2.setTextColor(color);
 //            t2.setLayoutParams(new TableRow.LayoutParams(5));
 //            t2.setTextSize(TypedValue.COMPLEX_UNIT_DIP,20);
@@ -145,7 +148,7 @@ public class LibraryActivity extends Activity {
 //            t2.setLayoutParams(numberParams);
 //
 //            TextView t3 = new TextView(getApplicationContext());
-//            t3.setText(String.valueOf(mCombatantList.get(i).getCount()));
+//            t3.setText(String.valueOf(combatantList.get(i).currentCount()));
 //            t3.setTextColor(color);
 //            t3.setGravity(Gravity.CENTER);
 //            t3.setLayoutParams(numberParams);

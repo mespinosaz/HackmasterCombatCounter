@@ -1,8 +1,5 @@
-package com.whs.hmcc;
+package com.whs.hmcc.Board.Combatant;
 
-/**
- * Created by root on 11/06/13.
- */
 public class Combatant {
     private String mName;
     private int mCount;
@@ -35,12 +32,5 @@ public class Combatant {
 
     public void substractCount() {
         mCount = Math.max(mCount-1,1);
-    }
-
-    public String toXML() {
-        return "<combatant " +
-                "name=\"\""+this.mName+"\"\"" +
-                "count=\"\""+this.mCount+"\"\"" +
-                "speed=\"\""+this.mSpeed+"\"\"/>";
     }
 }

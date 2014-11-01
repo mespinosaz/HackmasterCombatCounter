@@ -1,4 +1,4 @@
-package com.whs.hmcc;
+package com.whs.hmcc.Board.Combatant;
 
 import java.util.Comparator;
 

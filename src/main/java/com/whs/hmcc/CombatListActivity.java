@@ -1,8 +1,5 @@
 package com.whs.hmcc;
 
-/**
- * Created by root on 30/06/13.
- */
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -19,6 +16,8 @@ import android.widget.FilterQueryProvider;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.AdapterView.OnItemClickListener;
+
+import com.whs.hmcc.Model.DbAdapter;
 
 public class CombatListActivity extends Activity {
 
