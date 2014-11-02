@@ -9,8 +9,6 @@ import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.Model.DbAdapter;
 
 public class LoadCombatResult extends ActivityResult {
-    public static final int RESULT_CODE = 2;
-
     public LoadCombatResult(Activity activity, Intent intent, Board board) {
         super(activity, intent,board);
     }

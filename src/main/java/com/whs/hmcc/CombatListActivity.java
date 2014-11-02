@@ -31,13 +31,6 @@ public class CombatListActivity extends Activity {
 
         dbHelper = new DbAdapter(this);
         dbHelper.open();
-
-        //Clean all data
-       // dbHelper.deleteAllCombats();
-        //Add some data
-      //  dbHelper.insertExampleData();
-
-        //Generate ListView from SQLite Database
         displayListView();
 
     }
@@ -47,18 +40,15 @@ public class CombatListActivity extends Activity {
 
         Cursor cursor = dbHelper.getCombats();
 
-        // The desired columns to be bound
         String[] columns = new String[] {
                 DbAdapter.KEY_CNAME
         };
 
-        // the XML defined views which the data will be bound to
         int[] to = new int[] {
                 R.id.name,
         };
 
-        // create the adapter using the cursor pointing to the desired data
-        //as well as the layout information
+
         dataAdapter = new SimpleCursorAdapter(
                 this, R.layout.combat,
                 cursor,

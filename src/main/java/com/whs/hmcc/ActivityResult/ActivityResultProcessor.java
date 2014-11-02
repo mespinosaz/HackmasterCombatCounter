@@ -8,6 +8,8 @@ import com.whs.hmcc.ActivityResult.Result.AddCombatantResult;
 import com.whs.hmcc.ActivityResult.Result.LoadCombatResult;
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.MainActivity;
+import com.whs.hmcc.MenuAction.Action.AddCombatantAction;
+import com.whs.hmcc.MenuAction.Action.LoadCombatAction;
 
 public class ActivityResultProcessor {
     private MainActivity myActivity;
@@ -25,8 +27,8 @@ public class ActivityResultProcessor {
 
     private void setupResultMap() {
         resultMap = new SparseArray<ActivityResult>();
-        resultMap.append(AddCombatantResult.RESULT_CODE,new AddCombatantResult(myActivity, theIntent, theBoard));
-        resultMap.append(LoadCombatResult.RESULT_CODE,new LoadCombatResult(myActivity, theIntent, theBoard));
+        resultMap.append(AddCombatantAction.REQUEST_CODE,new AddCombatantResult(myActivity, theIntent, theBoard));
+        resultMap.append(LoadCombatAction.REQUEST_CODE,new LoadCombatResult(myActivity, theIntent, theBoard));
     }
 
     public void setParameters(int requestCode, int resultCode, Intent intent) {
