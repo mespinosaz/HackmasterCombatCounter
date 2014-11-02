@@ -45,9 +45,10 @@ public class Board {
 
     public void increaseCount() {
         currentCount++;
+        updateCombatantsCount();
     }
 
-    public void updateCombatants() {
+    private void updateCombatantsCount() {
         for(int i=0;i< combatantList.size();i++) {
             while(combatantList.get(i).getCount()< currentCount) {
                 combatantList.get(i).setCount(combatantList.get(i).getCount() + combatantList.get(i).getSpeed());
@@ -85,5 +86,9 @@ public class Board {
 
     public void setCurrentCount(int count) {
         currentCount = count;
+    }
+
+    public boolean isCombatantInCurrentCount(int index) {
+        return getCombatantCount(index) == currentCount();
     }
 }
