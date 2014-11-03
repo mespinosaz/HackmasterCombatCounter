@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import com.whs.hmcc.ActivityResult.ActivityResultProcessor;
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.Layout.BoardLayout;
-import com.whs.hmcc.MenuAction.MenuActionProcessor;
+import com.whs.hmcc.Menu.MenuActionProcessor;
 
 public class MainActivity extends Activity {
     private BoardLayout layout;
@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         theBoard = new Board();
         layout = new BoardLayout(this, theBoard);
-        layout.setup();
+        layout.draw();
     }
 
     @Override

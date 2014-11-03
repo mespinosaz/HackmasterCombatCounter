@@ -9,6 +9,8 @@ import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.Model.DbAdapter;
 
 public class LoadCombatResult extends ActivityResult {
+    public static final String SELECTED_TIEM_FIELD_NAME = "id";
+
     public LoadCombatResult(Activity activity, Intent intent, Board board) {
         super(activity, intent,board);
     }
@@ -21,7 +23,7 @@ public class LoadCombatResult extends ActivityResult {
     private void setupGui() {
         DbAdapter db = new DbAdapter(myActivity.getApplicationContext());
         db.open();
-        long combatId = myIntent.getLongExtra("id",-1);
+        long combatId = myIntent.getLongExtra(SELECTED_TIEM_FIELD_NAME,-1);
         setupCount(db, combatId);
         setupCombatants(db, combatId);
         db.close();

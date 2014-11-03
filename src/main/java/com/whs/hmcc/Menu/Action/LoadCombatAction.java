@@ -1,12 +1,11 @@
-package com.whs.hmcc.MenuAction.Action;
+package com.whs.hmcc.Menu.Action;
 
 import android.app.Activity;
 import android.content.Intent;
 
-import com.whs.hmcc.ActivityResult.Result.LoadCombatResult;
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.CombatListActivity;
-import com.whs.hmcc.MenuAction.MenuAction;
+import com.whs.hmcc.Menu.MenuAction;
 
 
 public class LoadCombatAction extends MenuAction {

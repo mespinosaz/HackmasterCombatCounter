@@ -12,6 +12,6 @@ public class AddActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add);
         layout = new AddCombatantLayout(this);
-        layout.setup();
+        layout.draw();
     }
 }

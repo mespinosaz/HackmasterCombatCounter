@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.whs.hmcc.ActivityResult.ActivityResult;
 import com.whs.hmcc.Board.Board;
+import com.whs.hmcc.Board.Combatant.Combatant;
 
 public class AddCombatantResult extends ActivityResult {
     public AddCombatantResult(Activity activity, Intent intent, Board board) {
@@ -13,9 +14,9 @@ public class AddCombatantResult extends ActivityResult {
     @Override
     public void process() {
         theBoard.addCombatant(
-                myIntent.getStringExtra("name"),
-                myIntent.getIntExtra("count", 1),
-                myIntent.getIntExtra("speed", 1)
+                myIntent.getStringExtra(Combatant.NAME_FIELD),
+                myIntent.getIntExtra(Combatant.COUNT_FIELD, 1),
+                myIntent.getIntExtra(Combatant.SPEED_FIELD, 1)
         );
     }
 }

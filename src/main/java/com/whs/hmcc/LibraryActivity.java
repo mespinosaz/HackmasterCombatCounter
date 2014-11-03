@@ -28,7 +28,7 @@ public class LibraryActivity extends Activity {
         setContentView(R.layout.library);
         load();
       //  for(int i=0;i<mCombatantArrayList.size();i++)
-        //    System.out.println(mCombatantArrayList.get(i).getName() + " " + mCombatantArrayList.get(i).getSpeed() + " " + mCombatantArrayList.get(i).currentCount() + "\n");
+        //    System.out.println(mCombatantArrayList.get(i).name() + " " + mCombatantArrayList.get(i).speed() + " " + mCombatantArrayList.get(i).currentCount() + "\n");
 
 
     }
@@ -37,7 +37,7 @@ public class LibraryActivity extends Activity {
         try {
             FileOutputStream fos = fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
             for(int i=0;i<mCombatantArrayList.size();i++)
-                fos.write((mCombatantArrayList.get(i).getName() + " " + mCombatantArrayList.get(i).getSpeed() + " " + mCombatantArrayList.get(i).getCount() + "\n").getBytes());
+                fos.write((mCombatantArrayList.get(i).name() + " " + mCombatantArrayList.get(i).speed() + " " + mCombatantArrayList.get(i).count() + "\n").getBytes());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -133,14 +133,14 @@ public class LibraryActivity extends Activity {
 //            }
 //
             TextView t1 = new TextView(getApplicationContext());
-            t1.setText(mCombatantArrayList.get(i).getName());
+            t1.setText(mCombatantArrayList.get(i).name());
             nameParams.setMargins(dpToPx(30),0,0,0);
             t1.setTextColor(Color.BLACK);
             t1.setLayoutParams(nameParams);
 //
 //
 //            TextView t2 = new TextView(getApplicationContext());
-//            t2.setText(String.valueOf(combatantList.get(i).getSpeed()));
+//            t2.setText(String.valueOf(combatantList.get(i).speed()));
 //            t2.setTextColor(color);
 //            t2.setLayoutParams(new TableRow.LayoutParams(5));
 //            t2.setTextSize(TypedValue.COMPLEX_UNIT_DIP,20);

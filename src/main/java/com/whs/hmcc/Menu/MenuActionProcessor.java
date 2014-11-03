@@ -1,14 +1,14 @@
-package com.whs.hmcc.MenuAction;
+package com.whs.hmcc.Menu;
 
 import android.util.SparseArray;
 import android.view.MenuItem;
 
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.MainActivity;
-import com.whs.hmcc.MenuAction.Action.AddCombatantAction;
-import com.whs.hmcc.MenuAction.Action.ClearCombatAction;
-import com.whs.hmcc.MenuAction.Action.LoadCombatAction;
-import com.whs.hmcc.MenuAction.Action.SaveCombatAction;
+import com.whs.hmcc.Menu.Action.AddCombatantAction;
+import com.whs.hmcc.Menu.Action.ClearCombatAction;
+import com.whs.hmcc.Menu.Action.LoadCombatAction;
+import com.whs.hmcc.Menu.Action.SaveCombatAction;
 import com.whs.hmcc.R;
 
 

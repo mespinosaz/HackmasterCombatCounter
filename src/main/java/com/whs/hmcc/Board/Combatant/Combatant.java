@@ -1,36 +1,40 @@
 package com.whs.hmcc.Board.Combatant;
 
 public class Combatant {
-    private String mName;
-    private int mCount;
-    private int mSpeed;
-    public Combatant(String _name, int _count, int _speed) {
-        mName = _name;
-        mCount = _count;
-        mSpeed = _speed;
+    public static final String NAME_FIELD = "name";
+    public static final String COUNT_FIELD = "count";
+    public static final String SPEED_FIELD = "speed";
+
+    private String combatantName;
+    private int combatantCount;
+    private int combatantSpeed;
+    public Combatant(String name, int count, int speed) {
+        combatantName = name;
+        combatantCount = count;
+        combatantSpeed = speed;
     }
 
-    public String getName() {
-        return mName;
+    public String name() {
+        return combatantName;
     }
 
-    public int getCount() {
-        return mCount;
+    public int count() {
+        return combatantCount;
     }
 
-    public int getSpeed() {
-        return mSpeed;
+    public int speed() {
+        return combatantSpeed;
     }
 
-    public void setCount(int _count) {
-        mCount = _count;
+    public void setCount(int count) {
+        combatantCount = count;
     }
 
     public void addCount() {
-        mCount++;
+        combatantCount++;
     }
 
     public void substractCount() {
-        mCount = Math.max(mCount-1,1);
+        combatantCount = Math.max(combatantCount-1,1);
     }
 }

@@ -8,8 +8,8 @@ import com.whs.hmcc.ActivityResult.Result.AddCombatantResult;
 import com.whs.hmcc.ActivityResult.Result.LoadCombatResult;
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.MainActivity;
-import com.whs.hmcc.MenuAction.Action.AddCombatantAction;
-import com.whs.hmcc.MenuAction.Action.LoadCombatAction;
+import com.whs.hmcc.Menu.Action.AddCombatantAction;
+import com.whs.hmcc.Menu.Action.LoadCombatAction;
 
 public class ActivityResultProcessor {
     private MainActivity myActivity;

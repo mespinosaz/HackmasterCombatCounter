@@ -36,7 +36,7 @@ public class Board {
     }
 
     public int getCombatantCount(int index) {
-        return combatantList.get(index).getCount();
+        return combatantList.get(index).count();
     }
 
     public void decreaseCombatantCount(int index) {
@@ -50,8 +50,8 @@ public class Board {
 
     private void updateCombatantsCount() {
         for(int i=0;i< combatantList.size();i++) {
-            while(combatantList.get(i).getCount()< currentCount) {
-                combatantList.get(i).setCount(combatantList.get(i).getCount() + combatantList.get(i).getSpeed());
+            while(combatantList.get(i).count()< currentCount) {
+                combatantList.get(i).setCount(combatantList.get(i).count() + combatantList.get(i).speed());
             }
         }
     }

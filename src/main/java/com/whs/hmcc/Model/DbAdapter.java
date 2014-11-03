@@ -113,9 +113,9 @@ public class DbAdapter {
     public long createCombatant(Combatant c, long combat_id) {
 
         ContentValues initialValues = new ContentValues();
-        initialValues.put(KEY_CNAME, c.getName());
-        initialValues.put(KEY_CSPEED, c.getSpeed());
-        initialValues.put(KEY_CCOUNT, c.getCount());
+        initialValues.put(KEY_CNAME, c.name());
+        initialValues.put(KEY_CSPEED, c.speed());
+        initialValues.put(KEY_CCOUNT, c.count());
         initialValues.put(KEY_CCOMBATID, combat_id);
 
         return mDb.insert(COMBATANT_TABLE, null, initialValues);

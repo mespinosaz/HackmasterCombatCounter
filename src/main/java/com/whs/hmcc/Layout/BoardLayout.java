@@ -11,9 +11,10 @@ import android.widget.TextView;
 
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.Layout.Params.BoardLayoutParams;
+import com.whs.hmcc.Layout.View.TextView.TextViewTable;
 import com.whs.hmcc.R;
 
-public class BoardLayout {
+public class BoardLayout implements LayoutInterface {
     private static final String COUNT_TITLE = "Count ";
     private static final int COUNT_VALUE_POSITION = 2;
     private static final int COMBATANT_LIST_POSITION = 2;
@@ -39,7 +40,7 @@ public class BoardLayout {
 
     }
 
-    public void setup() {
+    public void draw() {
         setupLayoutButtons();
     }
 
@@ -180,7 +181,7 @@ public class BoardLayout {
         int color = computeCombatantColor(combatantIndex);
 
         TextView newTextView = new TextView(theActivity.getApplicationContext());
-        newTextView.setText(String.valueOf(theBoard.getCombatant(combatantIndex).getSpeed()));
+        newTextView.setText(String.valueOf(theBoard.getCombatant(combatantIndex).speed()));
         newTextView.setTextColor(color);
         newTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DEFAULT_DIP_FONT_SIZE);
         newTextView.setGravity(Gravity.CENTER);
@@ -196,7 +197,7 @@ public class BoardLayout {
         int color = computeCombatantColor(combatantIndex);
 
         TextView newTextView = new TextView(theActivity.getApplicationContext());
-        newTextView.setText(theBoard.getCombatant(combatantIndex).getName());
+        newTextView.setText(theBoard.getCombatant(combatantIndex).name());
         newTextView.setTextColor(color);
         newTextView.setLayoutParams(nameParams);
 

@@ -1,4 +1,4 @@
-package com.whs.hmcc.Layout;
+package com.whs.hmcc.Layout.View.TextView;
 
 import android.widget.TextView;
 

@@ -18,9 +18,9 @@ public class CombatantComparator implements Comparator<Combatant> {
     public int compare(Combatant c1, Combatant c2) {
         switch(mOrder) {
             case ORDER_BY_COUNT:default:
-                return ((c1.getCount() < c2.getCount()) ? -1 : ((c1.getCount() == c2.getCount()) ? 0 : 1));
+                return ((c1.count() < c2.count()) ? -1 : ((c1.count() == c2.count()) ? 0 : 1));
             case ORDER_BY_NAME:
-                return c1.getName().compareTo(c2.getName());
+                return c1.name().compareTo(c2.name());
         }
     }
 }

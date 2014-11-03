@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name" >Hackmaster Combat Counter Pro
-    </string>
-    <string name="action_addcombat" >Add Combatant
-    </string>
-    <string name="action_resetcount" >Reset Count
-    </string>
-    <string name="hello_world" >Hello world!
-    </string>
-    <string name="empty_combatants">To add combatants select the \"Add...\" option in the menu.
-    </string>
-    <string name="speedTitle">Speed</string>
-    <string name="countTitle">Count</string>
-    <string name="nameTitle">Name</string>
-    <string name="deleteSymbol">x</string>
-    <string name="substractSymbol">-</string>
     <string name="addSymbol">+</string>
-
+    <string name="app_name" >Hackmaster Combat Counter</string>
+    <string name="action_addcombat" >Add Combatant</string>
+    <string name="action_resetcount" >Reset Count</string>
+    <string name="cancel">Cancel</string>
+    <string name="clearCombatantsDialog">Are you sure you want to clear all the combatants?</string>
+    <string name="clearCombatDialog">This action will clear all combatants and load the ones selected, are you sure?</string>
+    <string name="countTitle">Count</string>
+    <string name="deleteSymbol">x</string>
+    <string name="empty_combatants">To add combatants select the \"Add...\" option in the menu. </string>
+    <string name="incorrectParameters">Incorrect parameters</string>
+    <string name="nameTitle">Name</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+    <string name="saveCombatDescription">The current combat status will be saved.</string>
+    <string name="saveCombatTitle">Save combat</string>
+    <string name="speedTitle">Speed</string>
+    <string name="substractSymbol">-</string>
+    <string name="yes">Yes</string>
 </resources>

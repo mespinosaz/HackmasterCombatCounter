@@ -1,4 +1,4 @@
-package com.whs.hmcc.MenuAction;
+package com.whs.hmcc.Menu;
 
 import android.app.Activity;
 
