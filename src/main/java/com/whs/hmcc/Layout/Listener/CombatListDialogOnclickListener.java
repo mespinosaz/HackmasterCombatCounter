@@ -23,7 +23,7 @@ public class CombatListDialogOnclickListener implements DialogInterface.OnClickL
 
     private void returnSelection() {
         Intent returnIntent = new Intent();
-        returnIntent.putExtra(LoadCombatResult.SELECTED_TIEM_FIELD_NAME, selectedItemId);
+        returnIntent.putExtra(LoadCombatResult.SELECTED_ITEM_FIELD_NAME, selectedItemId);
         myActivity.setResult(myActivity.RESULT_OK,returnIntent);
         myActivity.finish();
     }

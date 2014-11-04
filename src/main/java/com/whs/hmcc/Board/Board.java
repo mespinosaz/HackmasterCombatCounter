@@ -24,7 +24,11 @@ public class Board {
 
 
     public void addCombatant(String name, int start_count, int speed) {
-        combatantList.add(new Combatant(name, start_count, speed));
+        addCombatant(new Combatant(name, start_count, speed));
+    }
+
+    public void addCombatant(Combatant combatant) {
+        combatantList.add(combatant);
     }
 
     public void removeCombatant(int index) {
@@ -91,4 +95,6 @@ public class Board {
     public boolean isCombatantInCurrentCount(int index) {
         return getCombatantCount(index) == currentCount();
     }
+
+
 }

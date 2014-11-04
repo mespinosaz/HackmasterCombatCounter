@@ -18,9 +18,9 @@ public class ClearCombatAction extends MenuAction {
     public boolean doAction() {
         AlertDialog.Builder builder = new AlertDialog.Builder(myActivity);
         builder.setMessage(R.string.clearCombatantsDialog)
-                .setPositiveButton(R.string.yes, new ClearCombatDialogOnclickListener(myActivity,theBoard))
-                .setNegativeButton(R.string.no, new NullDialogOnclickListener())
-                .show();
+            .setPositiveButton(R.string.yes, new ClearCombatDialogOnclickListener(myActivity,theBoard))
+            .setNegativeButton(R.string.no, new NullDialogOnclickListener())
+            .show();
         return true;
     }
 }

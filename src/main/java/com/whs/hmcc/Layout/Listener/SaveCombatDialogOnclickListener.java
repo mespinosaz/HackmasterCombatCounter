@@ -5,7 +5,9 @@ import android.content.DialogInterface;
 import android.widget.EditText;
 
 import com.whs.hmcc.Board.Board;
-import com.whs.hmcc.Model.DbAdapter;
+import com.whs.hmcc.Database.DataMapper.CombatDataMapper;
+import com.whs.hmcc.Database.DataMapper.CombatantDataMapper;
+import com.whs.hmcc.Database.Model.CombatModel;
 
 public class SaveCombatDialogOnclickListener implements DialogInterface.OnClickListener {
     private EditText theInput;
@@ -19,14 +21,13 @@ public class SaveCombatDialogOnclickListener implements DialogInterface.OnClickL
     }
 
     public void onClick(DialogInterface dialog, int whichButton) {
-        String value = theInput.getText().toString();
-        DbAdapter db = new DbAdapter(myActivity.getApplicationContext());
-        db.open();
-        long combat_id = db.createCombat(value, theBoard.currentCount());
+        CombatDataMapper combatDataMapper  = new CombatDataMapper(myActivity);
+        CombatantDataMapper combatantDataMapper  = new CombatantDataMapper(myActivity);
+        String combatName = theInput.getText().toString();
+        int combatCount = theBoard.currentCount();
+        long combatId = combatDataMapper.create(combatName, combatCount);
         for (int i = 0; i < theBoard.getCombatantList().size(); i++) {
-            db.createCombatant(theBoard.getCombatantList().get(i), combat_id);
+            combatantDataMapper.addCombatantToCombat(theBoard.getCombatantList().get(i), combatId);
         }
-        db.close();
-
     }
 }

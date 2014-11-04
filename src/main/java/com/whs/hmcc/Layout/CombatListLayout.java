@@ -8,13 +8,14 @@ import android.widget.SimpleCursorAdapter;
 
 import com.whs.hmcc.Layout.Listener.CombatListOnclickListener;
 import com.whs.hmcc.Layout.Watcher.TextFilterWatcher;
-import com.whs.hmcc.Model.DbAdapter;
-import com.whs.hmcc.Model.Filter.CombatNameFilterQueryProvider;
+import com.whs.hmcc.Database.Helper.CombatDatabaseHelper;
+import com.whs.hmcc.Database.Model.CombatModel;
+import com.whs.hmcc.Database.Filter.CombatNameFilterQueryProvider;
 import com.whs.hmcc.R;
 
 public class CombatListLayout implements LayoutInterface {
     private Activity myActivity;
-    private DbAdapter myDBAdapter;
+    private CombatModel myCombatModel;
     private SimpleCursorAdapter myDBCursor;
 
     public CombatListLayout(Activity activity) {
@@ -38,7 +39,7 @@ public class CombatListLayout implements LayoutInterface {
     private void setupSearchFilter() {
         EditText myFilter = (EditText) myActivity.findViewById(R.id.myFilter);
         myFilter.addTextChangedListener(new TextFilterWatcher(myDBCursor));
-        myDBCursor.setFilterQueryProvider(new CombatNameFilterQueryProvider(myDBAdapter));
+        myDBCursor.setFilterQueryProvider(new CombatNameFilterQueryProvider(myCombatModel));
     }
 
     private void setupDatabaseConnection() {
@@ -47,15 +48,15 @@ public class CombatListLayout implements LayoutInterface {
     }
 
     private void createDBConnection() {
-        myDBAdapter = new DbAdapter(myActivity);
-        myDBAdapter.open();
+        myCombatModel = new CombatModel(myActivity);
+        myCombatModel.open();
     }
 
     private void createDBCursor() {
-        Cursor cursor = myDBAdapter.getCombats();
+        Cursor cursor = myCombatModel.combats();
 
         String[] columns = new String[] {
-                DbAdapter.KEY_CNAME
+                CombatDatabaseHelper.COMBAT_NAME_FIELD
         };
 
         int[] to = new int[] {

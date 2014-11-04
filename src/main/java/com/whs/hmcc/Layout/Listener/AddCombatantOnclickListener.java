@@ -31,21 +31,21 @@ public class AddCombatantOnclickListener implements View.OnClickListener {
     private void returnIntent(EditText inputName, EditText inputCount, EditText inputSpeed) {
         Intent returnIntent = new Intent();
         returnIntent.putExtra(Combatant.NAME_FIELD,inputName.getText().toString())
-                .putExtra(Combatant.COUNT_FIELD, Integer.parseInt(inputCount.getText().toString()))
-                .putExtra(Combatant.SPEED_FIELD, Integer.parseInt(inputSpeed.getText().toString()));
+            .putExtra(Combatant.COUNT_FIELD, Integer.parseInt(inputCount.getText().toString()))
+            .putExtra(Combatant.SPEED_FIELD, Integer.parseInt(inputSpeed.getText().toString()));
         myActivity.setResult(Activity.RESULT_OK,returnIntent);
         myActivity.finish();
     }
 
     private boolean inputsAreFilled(EditText inputName, EditText inputCount, EditText inputSpeed) {
         return inputTextIsFilled(inputName)
-                && inputNumberIsFilled(inputCount)
-                && inputNumberIsFilled(inputSpeed);
+            && inputNumberIsFilled(inputCount)
+            && inputNumberIsFilled(inputSpeed);
     }
 
     private boolean inputNumberIsFilled(EditText input) {
         return input.getText().toString().length() > 0
-                && Integer.parseInt(input.getText().toString()) > 0;
+            && Integer.parseInt(input.getText().toString()) > 0;
     }
 
     private boolean inputTextIsFilled(EditText input) {

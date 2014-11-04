@@ -2,14 +2,15 @@ package com.whs.hmcc.ActivityResult.Result;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 
 import com.whs.hmcc.ActivityResult.ActivityResult;
 import com.whs.hmcc.Board.Board;
-import com.whs.hmcc.Model.DbAdapter;
+import com.whs.hmcc.Board.Combatant.CombatantCollection;
+import com.whs.hmcc.Database.DataMapper.CombatDataMapper;
+import com.whs.hmcc.Database.DataMapper.CombatantDataMapper;
 
 public class LoadCombatResult extends ActivityResult {
-    public static final String SELECTED_TIEM_FIELD_NAME = "id";
+    public static final String SELECTED_ITEM_FIELD_NAME = "id";
 
     public LoadCombatResult(Activity activity, Intent intent, Board board) {
         super(activity, intent,board);
@@ -21,29 +22,23 @@ public class LoadCombatResult extends ActivityResult {
     }
 
     private void setupGui() {
-        DbAdapter db = new DbAdapter(myActivity.getApplicationContext());
-        db.open();
-        long combatId = myIntent.getLongExtra(SELECTED_TIEM_FIELD_NAME,-1);
-        setupCount(db, combatId);
-        setupCombatants(db, combatId);
-        db.close();
+        long combatId = myIntent.getLongExtra(SELECTED_ITEM_FIELD_NAME,-1);
+        setupCount(combatId);
+        setupCombatants(combatId);
     }
 
-    private void setupCombatants(DbAdapter db, long combatId) {
-        Cursor cursor = db.getCombatantsByCombat(combatId);
+    private void setupCombatants(long combatId) {
+        CombatantDataMapper data = new CombatantDataMapper(myActivity);
+        CombatantCollection combatants = data.combatantsFromCombat(combatId);
         theBoard.resetCombatants();
-        while(!cursor.isAfterLast()) {
-            theBoard.addCombatant(
-                    cursor.getString(cursor.getColumnIndex(db.KEY_CNAME)),
-                    cursor.getInt(cursor.getColumnIndex(db.KEY_CCOUNT)),
-                    cursor.getInt(cursor.getColumnIndex(db.KEY_CSPEED))
-            );
-            cursor.moveToNext();
+        for(int index = 0; index < combatants.size(); index++) {
+            theBoard.addCombatant(combatants.get(index));
         }
     }
 
-    private void setupCount(DbAdapter db, long combatId) {
-        Cursor cursor = db.getCombatById(combatId);
-        theBoard.setCurrentCount(cursor.getInt(cursor.getColumnIndex(db.KEY_CCOUNT)));
+    private void setupCount(long combatId) {
+        CombatDataMapper data = new CombatDataMapper(myActivity);
+        int count = data.countFromCombat(combatId);
+        theBoard.setCurrentCount(count);
     }
 }
