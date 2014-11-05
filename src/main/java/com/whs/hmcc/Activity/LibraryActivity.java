@@ -1,4 +1,4 @@
-package com.whs.hmcc;
+package com.whs.hmcc.Activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.whs.hmcc.Board.Combatant.Combatant;
 import com.whs.hmcc.Board.Combatant.CombatantComparator;
+import com.whs.hmcc.R;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;

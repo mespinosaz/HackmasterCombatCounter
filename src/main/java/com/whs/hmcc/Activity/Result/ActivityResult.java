@@ -1,4 +1,4 @@
-package com.whs.hmcc.ActivityResult;
+package com.whs.hmcc.Activity.Result;
 
 import android.app.Activity;
 import android.content.Intent;

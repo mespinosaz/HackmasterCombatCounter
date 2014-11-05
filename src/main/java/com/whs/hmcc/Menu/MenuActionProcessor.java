@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import android.view.MenuItem;
 
 import com.whs.hmcc.Board.Board;
-import com.whs.hmcc.MainActivity;
+import com.whs.hmcc.Activity.MainActivity;
 import com.whs.hmcc.Menu.Action.AddCombatantAction;
 import com.whs.hmcc.Menu.Action.ClearCombatAction;
 import com.whs.hmcc.Menu.Action.LoadCombatAction;

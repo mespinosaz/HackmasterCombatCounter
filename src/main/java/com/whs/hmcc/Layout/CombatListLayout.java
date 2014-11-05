@@ -16,7 +16,7 @@ import com.whs.hmcc.R;
 public class CombatListLayout implements LayoutInterface {
     private Activity myActivity;
     private CombatModel myCombatModel;
-    private SimpleCursorAdapter myDBCursor;
+    private SimpleCursorAdapter myAdapter;
 
     public CombatListLayout(Activity activity) {
         myActivity = activity;
@@ -24,7 +24,7 @@ public class CombatListLayout implements LayoutInterface {
 
     @Override
     public void draw() {
-        setupDatabaseConnection();
+        setupAdapter();
         drawListView();
         setupSearchFilter();
 
@@ -32,27 +32,27 @@ public class CombatListLayout implements LayoutInterface {
 
     private void drawListView() {
         ListView listView = (ListView) myActivity.findViewById(R.id.listView1);
-        listView.setAdapter(myDBCursor);
+        listView.setAdapter(myAdapter);
         listView.setOnItemClickListener(new CombatListOnclickListener(myActivity));
     }
 
     private void setupSearchFilter() {
         EditText myFilter = (EditText) myActivity.findViewById(R.id.myFilter);
-        myFilter.addTextChangedListener(new TextFilterWatcher(myDBCursor));
-        myDBCursor.setFilterQueryProvider(new CombatNameFilterQueryProvider(myCombatModel));
+        myFilter.addTextChangedListener(new TextFilterWatcher(myAdapter));
+        myAdapter.setFilterQueryProvider(new CombatNameFilterQueryProvider(myCombatModel));
     }
 
-    private void setupDatabaseConnection() {
-        createDBConnection();
-        createDBCursor();
+    private void setupAdapter() {
+        setupModel();
+        createAdapter();
     }
 
-    private void createDBConnection() {
+    private void setupModel() {
         myCombatModel = new CombatModel(myActivity);
         myCombatModel.open();
     }
 
-    private void createDBCursor() {
+    private void createAdapter() {
         Cursor cursor = myCombatModel.combats();
 
         String[] columns = new String[] {
@@ -63,7 +63,7 @@ public class CombatListLayout implements LayoutInterface {
                 R.id.name,
         };
 
-        myDBCursor = new SimpleCursorAdapter(
+        myAdapter = new SimpleCursorAdapter(
                 myActivity,
                 R.layout.combat,
                 cursor,

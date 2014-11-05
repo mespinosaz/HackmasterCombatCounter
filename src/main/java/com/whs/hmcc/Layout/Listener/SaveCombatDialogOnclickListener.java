@@ -7,7 +7,6 @@ import android.widget.EditText;
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.Database.DataMapper.CombatDataMapper;
 import com.whs.hmcc.Database.DataMapper.CombatantDataMapper;
-import com.whs.hmcc.Database.Model.CombatModel;
 
 public class SaveCombatDialogOnclickListener implements DialogInterface.OnClickListener {
     private EditText theInput;

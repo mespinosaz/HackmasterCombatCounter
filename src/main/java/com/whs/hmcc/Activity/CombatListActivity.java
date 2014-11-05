@@ -1,9 +1,10 @@
-package com.whs.hmcc;
+package com.whs.hmcc.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 
 import com.whs.hmcc.Layout.CombatListLayout;
+import com.whs.hmcc.R;
 
 public class CombatListActivity extends Activity {
     CombatListLayout layout;

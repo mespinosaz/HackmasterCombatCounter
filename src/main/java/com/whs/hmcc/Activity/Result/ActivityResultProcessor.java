@@ -1,13 +1,13 @@
-package com.whs.hmcc.ActivityResult;
+package com.whs.hmcc.Activity.Result;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.util.SparseArray;
 
-import com.whs.hmcc.ActivityResult.Result.AddCombatantResult;
-import com.whs.hmcc.ActivityResult.Result.LoadCombatResult;
+import com.whs.hmcc.Activity.Result.Result.AddCombatantResult;
+import com.whs.hmcc.Activity.Result.Result.LoadCombatResult;
 import com.whs.hmcc.Board.Board;
-import com.whs.hmcc.MainActivity;
+import com.whs.hmcc.Activity.MainActivity;
 import com.whs.hmcc.Menu.Action.AddCombatantAction;
 import com.whs.hmcc.Menu.Action.LoadCombatAction;
 

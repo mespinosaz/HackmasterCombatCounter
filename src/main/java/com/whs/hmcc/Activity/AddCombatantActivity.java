@@ -1,11 +1,12 @@
-package com.whs.hmcc;
+package com.whs.hmcc.Activity;
 
 import android.os.Bundle;
 import android.app.Activity;
 
 import com.whs.hmcc.Layout.AddCombatantLayout;
+import com.whs.hmcc.R;
 
-public class AddActivity extends Activity {
+public class AddCombatantActivity extends Activity {
     AddCombatantLayout layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

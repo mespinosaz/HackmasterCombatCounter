@@ -1,4 +1,4 @@
-package com.whs.hmcc;
+package com.whs.hmcc.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,11 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.whs.hmcc.ActivityResult.ActivityResultProcessor;
+import com.whs.hmcc.Activity.Result.ActivityResultProcessor;
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.Layout.BoardLayout;
 import com.whs.hmcc.Menu.MenuActionProcessor;
+import com.whs.hmcc.R;
 
 public class MainActivity extends Activity {
     private BoardLayout layout;
@@ -33,8 +34,7 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         MenuActionProcessor processor = new MenuActionProcessor(this, item, theBoard);
-        Boolean result = processor.process();
-        return result;
+        return processor.process();
     }
 
 

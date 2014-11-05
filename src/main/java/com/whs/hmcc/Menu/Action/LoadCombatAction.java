@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.whs.hmcc.Board.Board;
-import com.whs.hmcc.CombatListActivity;
+import com.whs.hmcc.Activity.CombatListActivity;
 import com.whs.hmcc.Menu.MenuAction;
 
 

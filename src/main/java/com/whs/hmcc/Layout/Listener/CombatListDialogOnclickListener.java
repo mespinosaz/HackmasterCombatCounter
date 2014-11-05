@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 
-import com.whs.hmcc.ActivityResult.Result.LoadCombatResult;
+import com.whs.hmcc.Activity.Result.Result.LoadCombatResult;
 
 public class CombatListDialogOnclickListener implements DialogInterface.OnClickListener {
     private Activity myActivity;
