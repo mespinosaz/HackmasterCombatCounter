@@ -27,7 +27,6 @@ public class CombatListLayout implements LayoutInterface {
         setupAdapter();
         drawListView();
         setupSearchFilter();
-
     }
 
     private void drawListView() {
@@ -54,15 +53,12 @@ public class CombatListLayout implements LayoutInterface {
 
     private void createAdapter() {
         Cursor cursor = myCombatModel.combats();
-
         String[] columns = new String[] {
             DatabaseHelper.COMBAT_NAME_FIELD
         };
-
         int[] to = new int[] {
                 R.id.name,
         };
-
         myAdapter = new SimpleCursorAdapter(
                 myActivity,
                 R.layout.combat,

@@ -6,11 +6,13 @@
     <string name="action_resetcount" >Reset Count</string>
     <string name="cancel">Cancel</string>
     <string name="clearCombatantsDialog">Are you sure you want to clear all the combatants?</string>
-    <string name="clearCombatDialog">This action will clear all combatants and load the ones selected, are you sure?</string>
+    <string name="clearCombatDialog">Loading the combat will remove all the current combatants and reset the count.</string>
     <string name="countTitle">Count</string>
+    <string name="delete">Delete</string>
     <string name="deleteSymbol">x</string>
     <string name="empty_combatants">To add combatants select the \"Add...\" option in the menu. </string>
     <string name="incorrectParameters">Incorrect parameters</string>
+    <string name="load">Load</string>
     <string name="nameTitle">Name</string>
     <string name="no">No</string>
     <string name="ok">Ok</string>

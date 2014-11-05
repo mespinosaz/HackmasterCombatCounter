@@ -61,4 +61,12 @@ public class CombatModel extends Model {
             DatabaseHelper.COMBAT_ID_FIELD + " = " + String.valueOf(combat_id)
         );
     }
+
+    public int deleteCombat(long combatId) {
+        return myDB.delete(
+            DatabaseHelper.COMBAT_TABLE,
+            DatabaseHelper.COMBAT_ID_FIELD + "=" + String.valueOf(combatId) ,
+            null
+       );
+    }
 }

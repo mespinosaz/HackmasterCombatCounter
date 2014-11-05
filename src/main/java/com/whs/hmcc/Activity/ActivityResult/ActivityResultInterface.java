@@ -1,4 +1,4 @@
-package com.whs.hmcc.Activity.Result;
+package com.whs.hmcc.Activity.ActivityResult;
 
 public interface ActivityResultInterface {
     public void process();

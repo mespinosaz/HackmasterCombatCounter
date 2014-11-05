@@ -28,6 +28,10 @@ public class CombatDataMapper extends DataMapper {
     }
 
     public long create(String name, int count) {
-        return model().createCombat(name,count);
+        return model().createCombat(name, count);
+    }
+
+    public void delete(long combatId) {
+        model().deleteCombat(combatId);
     }
 }

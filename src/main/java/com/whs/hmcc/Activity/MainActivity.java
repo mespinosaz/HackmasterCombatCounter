@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.whs.hmcc.Activity.Result.ActivityResultProcessor;
+import com.whs.hmcc.Activity.ActivityResult.ActivityResultProcessor;
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.Layout.BoardLayout;
 import com.whs.hmcc.Menu.MenuActionProcessor;

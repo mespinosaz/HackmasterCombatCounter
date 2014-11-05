@@ -1,9 +1,9 @@
-package com.whs.hmcc.Activity.Result.Result;
+package com.whs.hmcc.Activity.ActivityResult.Result;
 
 import android.app.Activity;
 import android.content.Intent;
 
-import com.whs.hmcc.Activity.Result.ActivityResult;
+import com.whs.hmcc.Activity.ActivityResult.ActivityResult;
 import com.whs.hmcc.Board.Board;
 import com.whs.hmcc.Board.Combatant.Combatant;
 
