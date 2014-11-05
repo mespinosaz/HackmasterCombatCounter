@@ -4,12 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 
 import com.whs.hmcc.Database.Cursor.CursorProcessor;
-import com.whs.hmcc.Database.Helper.CombatDatabaseHelper;
+import com.whs.hmcc.Database.Helper.DatabaseHelper;
 import com.whs.hmcc.Database.Model.CombatModel;
 
 public class CombatDataMapper extends DataMapper {
-    private CombatModel theModel;
-
     public CombatDataMapper(Context context) {
         super(context);
     }
@@ -20,12 +18,16 @@ public class CombatDataMapper extends DataMapper {
     }
 
     public int countFromCombat(long combatId) {
-        Cursor cursor = theModel.combatById(combatId);
+        Cursor cursor = model().combatById(combatId);
         CursorProcessor processor = new CursorProcessor(cursor);
-        return processor.getIntegerValue(CombatDatabaseHelper.COMBAT_COUNT_FIELD);
+        return processor.getIntegerValue(DatabaseHelper.COMBAT_COUNT_FIELD);
+    }
+
+    private CombatModel model() {
+        return (CombatModel)theModel;
     }
 
     public long create(String name, int count) {
-        return theModel.createCombat(name,count);
+        return model().createCombat(name,count);
     }
 }

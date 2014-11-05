@@ -5,11 +5,11 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.whs.hmcc.Database.Helper.CombatDatabaseHelper;
+import com.whs.hmcc.Database.Helper.DatabaseHelper;
 
 abstract public class Model {
     private Context theContext;
-    private CombatDatabaseHelper myDBHelper;
+    private DatabaseHelper myDBHelper;
     protected SQLiteDatabase myDB;
 
     public Model(Context context) {
@@ -17,7 +17,7 @@ abstract public class Model {
     }
 
     public Model open() throws SQLException {
-        myDBHelper = new CombatDatabaseHelper(theContext);
+        myDBHelper = new DatabaseHelper(theContext);
         myDB = myDBHelper.getWritableDatabase();
         return this;
     }

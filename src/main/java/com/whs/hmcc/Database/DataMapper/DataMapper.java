@@ -5,8 +5,8 @@ import android.content.Context;
 import com.whs.hmcc.Database.Model.Model;
 
 abstract public class DataMapper {
-    Model theModel;
-    Context myContext;
+    protected Model theModel;
+    protected Context myContext;
 
     public DataMapper(Context context) {
         myContext = context;

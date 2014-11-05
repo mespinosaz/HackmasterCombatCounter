@@ -8,7 +8,7 @@ import android.widget.SimpleCursorAdapter;
 
 import com.whs.hmcc.Layout.Listener.CombatListOnclickListener;
 import com.whs.hmcc.Layout.Watcher.TextFilterWatcher;
-import com.whs.hmcc.Database.Helper.CombatDatabaseHelper;
+import com.whs.hmcc.Database.Helper.DatabaseHelper;
 import com.whs.hmcc.Database.Model.CombatModel;
 import com.whs.hmcc.Database.Filter.CombatNameFilterQueryProvider;
 import com.whs.hmcc.R;
@@ -56,7 +56,7 @@ public class CombatListLayout implements LayoutInterface {
         Cursor cursor = myCombatModel.combats();
 
         String[] columns = new String[] {
-                CombatDatabaseHelper.COMBAT_NAME_FIELD
+            DatabaseHelper.COMBAT_NAME_FIELD
         };
 
         int[] to = new int[] {

@@ -6,11 +6,10 @@ import android.database.Cursor;
 import com.whs.hmcc.Board.Combatant.Combatant;
 import com.whs.hmcc.Board.Combatant.CombatantCollection;
 import com.whs.hmcc.Database.Cursor.CursorProcessor;
-import com.whs.hmcc.Database.Helper.CombatantDatabaseHelper;
+import com.whs.hmcc.Database.Helper.DatabaseHelper;
 import com.whs.hmcc.Database.Model.CombatantModel;
 
 public class CombatantDataMapper  extends DataMapper {
-    private CombatantModel theModel;
     public CombatantDataMapper(Context context) {
         super(context);
     }
@@ -21,7 +20,7 @@ public class CombatantDataMapper  extends DataMapper {
     }
 
     public CombatantCollection combatantsFromCombat(long combatId) {
-        Cursor cursor = theModel.combatantsByCombat(combatId);
+        Cursor cursor = model().combatantsByCombat(combatId);
         CombatantCollection combatants = new CombatantCollection();
         while(!cursor.isAfterLast()) {
             combatants.add(
@@ -32,17 +31,21 @@ public class CombatantDataMapper  extends DataMapper {
         return combatants;
     }
 
+    private CombatantModel model() {
+        return (CombatantModel) theModel;
+    }
+
     private Combatant prepareCombatantFromCursor(Cursor cursor) {
         CursorProcessor processor = new CursorProcessor(cursor);
         return new Combatant(
-            processor.getStringValue(CombatantDatabaseHelper.COMBATANT_NAME_FIELD),
-            processor.getIntegerValue(CombatantDatabaseHelper.COMBATANT_COUNT_FIELD),
-            processor.getIntegerValue(CombatantDatabaseHelper.COMBATANT_SPEED_FIELD)
+            processor.getStringValue(DatabaseHelper.COMBATANT_NAME_FIELD),
+            processor.getIntegerValue(DatabaseHelper.COMBATANT_COUNT_FIELD),
+            processor.getIntegerValue(DatabaseHelper.COMBATANT_SPEED_FIELD)
         );
     }
 
     public void addCombatantToCombat(Combatant combatant, long combatId) {
-        theModel.createCombatant(
+        model().createCombatant(
                 combatant.name(),
                 combatant.speed(),
                 combatant.count(),

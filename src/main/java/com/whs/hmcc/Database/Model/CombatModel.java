@@ -5,29 +5,32 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 
-import com.whs.hmcc.Database.Helper.CombatDatabaseHelper;
+import com.whs.hmcc.Database.Helper.DatabaseHelper;
 
 public class CombatModel extends Model {
+    DatabaseHelper myHelper;
+
     public CombatModel(Context context) {
         super(context);
+        myHelper = new DatabaseHelper(context);
     }
 
     public long createCombat(String name, Integer count) {
         ContentValues initialValues = new ContentValues();
-        initialValues.put(CombatDatabaseHelper.COMBAT_NAME_FIELD, name);
-        initialValues.put(CombatDatabaseHelper.COMBAT_COUNT_FIELD,count);
-        return myDB.insert(CombatDatabaseHelper.COMBAT_TABLE, null, initialValues);
+        initialValues.put(DatabaseHelper.COMBAT_NAME_FIELD, name);
+        initialValues.put(DatabaseHelper.COMBAT_COUNT_FIELD, count);
+        return myDB.insert(DatabaseHelper.COMBAT_TABLE, null, initialValues);
     }
 
     public Cursor combats() {
         return executeQuery(
-                CombatDatabaseHelper.COMBAT_TABLE,
-                new String[]{
-                        CombatDatabaseHelper.COMBAT_ID_FIELD,
-                        CombatDatabaseHelper.COMBAT_NAME_FIELD,
-                        CombatDatabaseHelper.COMBAT_COUNT_FIELD
-                },
-                null
+            DatabaseHelper.COMBAT_TABLE,
+            new String[]{
+                DatabaseHelper.COMBAT_ID_FIELD,
+                DatabaseHelper.COMBAT_NAME_FIELD,
+                DatabaseHelper.COMBAT_COUNT_FIELD
+            },
+            null
         );
     }
 
@@ -36,26 +39,26 @@ public class CombatModel extends Model {
             return combats();
         } else {
             return executeQuery(
-                    CombatDatabaseHelper.COMBAT_TABLE,
-                    new String[]{
-                            CombatDatabaseHelper.COMBAT_ID_FIELD,
-                            CombatDatabaseHelper.COMBAT_NAME_FIELD,
-                            CombatDatabaseHelper.COMBAT_COUNT_FIELD
-                    },
-                    CombatDatabaseHelper.COMBAT_NAME_FIELD + " LIKE '%" + inputText + "%'"
+                DatabaseHelper.COMBAT_TABLE,
+                new String[]{
+                    DatabaseHelper.COMBAT_ID_FIELD,
+                    DatabaseHelper.COMBAT_NAME_FIELD,
+                    DatabaseHelper.COMBAT_COUNT_FIELD
+                },
+                DatabaseHelper.COMBAT_NAME_FIELD + " LIKE '%" + inputText + "%'"
             );
         }
     }
 
     public Cursor combatById(long combat_id) throws SQLException {
         return executeQuery(
-            CombatDatabaseHelper.COMBAT_TABLE,
+            DatabaseHelper.COMBAT_TABLE,
             new String[] {
-                CombatDatabaseHelper.COMBAT_ID_FIELD,
-                CombatDatabaseHelper.COMBAT_NAME_FIELD,
-                CombatDatabaseHelper.COMBAT_COUNT_FIELD
+                DatabaseHelper.COMBAT_ID_FIELD,
+                DatabaseHelper.COMBAT_NAME_FIELD,
+                DatabaseHelper.COMBAT_COUNT_FIELD
             },
-            CombatDatabaseHelper.COMBAT_ID_FIELD + " = " + String.valueOf(combat_id)
+            DatabaseHelper.COMBAT_ID_FIELD + " = " + String.valueOf(combat_id)
         );
     }
 }
