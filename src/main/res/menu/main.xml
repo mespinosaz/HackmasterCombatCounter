@@ -8,7 +8,7 @@
           android:orderInCategory="100"
           android:showAsAction="never" />
     <item android:id="@+id/action_loadcombat"
-          android:title="Load combat"
+          android:title="Manage combats"
           android:orderInCategory="100"
           android:showAsAction="never" />
     <item android:id="@+id/action_savecombat"
